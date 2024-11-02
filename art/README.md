@@ -1,0 +1,1 @@
+# So the art folder can exist on remote repo
