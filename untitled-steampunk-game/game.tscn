@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://jovaxxxf25v1"]
+[gd_scene load_steps=7 format=3 uid="uid://jovaxxxf25v1"]
 
 [ext_resource type="PackedScene" uid="uid://ctvidwgdybrfj" path="res://player.tscn" id="1_7odis"]
 [ext_resource type="Script" path="res://game.gd" id="1_ukjgc"]
+[ext_resource type="PackedScene" uid="uid://b3u8l5nnkqx70" path="res://back_and_forth_gear.tscn" id="3_t4arx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x6bts"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wg6tc"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nfcg0"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ukjgc")
@@ -14,12 +17,21 @@ script = ExtResource("1_ukjgc")
 physics_material_override = SubResource("PhysicsMaterial_x6bts")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(35, -29)
+position = Vector2(35, 30)
 shape = SubResource("WorldBoundaryShape2D_wg6tc")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(366.529, -116)
+scale = Vector2(1629.06, 906)
+texture = SubResource("PlaceholderTexture2D_nfcg0")
 
 [node name="Player" parent="." instance=ExtResource("1_7odis")]
 position = Vector2(25, -63)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2(200, -50)
-zoom = Vector2(0.8, 0.8)
+zoom = Vector2(0.9, 0.9)
+
+[node name="back_and_forth_gear" parent="." instance=ExtResource("3_t4arx")]
+position = Vector2(1351, 144)
+scale = Vector2(0.1, 0.1)
