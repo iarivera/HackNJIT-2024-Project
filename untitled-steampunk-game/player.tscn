@@ -91,17 +91,17 @@ animations = [{
 "texture": ExtResource("12_rhd8e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_jpybu")
-}, {
-"duration": 1.0,
 "texture": ExtResource("14_7i7jj")
 }, {
 "duration": 1.0,
 "texture": ExtResource("12_rhd8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jpybu")
 }],
 "loop": true,
 "name": &"run_left",
-"speed": 2.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -118,7 +118,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run_right",
-"speed": 2.0
+"speed": 4.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_or1gh"]
@@ -132,8 +132,8 @@ script = ExtResource("1_hfprt")
 position = Vector2(78, 64)
 scale = Vector2(1.075, 1.35714)
 sprite_frames = SubResource("SpriteFrames_5dp5b")
-animation = &"jump_right"
-frame_progress = 0.244023
+animation = &"idle_left"
+frame_progress = 0.673695
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -3)

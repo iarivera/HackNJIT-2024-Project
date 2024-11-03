@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var SPEED = 200
+var SPEED = 300
 var JUMP = -600
 var FALL = 300
 var screen_size 
@@ -20,13 +20,13 @@ func _process(delta: float) -> void:
 		velocity.y = FALL
 	
 	if not is_on_floor():
-		if velocity.y > 0 and velocity.x > 0:
+		if velocity.y > 0 and state == 0:
 			$AnimatedSprite2D.play("fall_right")
-		elif velocity.y > 0 and velocity.x < 0:
+		elif velocity.y > 0 and state == 1:
 			$AnimatedSprite2D.play("fall_left")
-		elif velocity.y < 0 and velocity.x > 0:
+		elif velocity.y < 0 and state == 0:
 			$AnimatedSprite2D.play("jump_right")
-		elif velocity.y < 0 and velocity.x < 0:
+		elif velocity.y < 0 and state == 1:
 			$AnimatedSprite2D.play("jump_left")
 		
 	if is_on_floor():

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://jovaxxxf25v1"]
+[gd_scene load_steps=10 format=3 uid="uid://jovaxxxf25v1"]
 
 [ext_resource type="PackedScene" uid="uid://ctvidwgdybrfj" path="res://player.tscn" id="1_7odis"]
 [ext_resource type="Script" path="res://game.gd" id="1_ukjgc"]
 [ext_resource type="PackedScene" uid="uid://b3u8l5nnkqx70" path="res://back_and_forth_gear.tscn" id="3_t4arx"]
 [ext_resource type="PackedScene" uid="uid://c1ggo0cijva4t" path="res://rotating_gear.tscn" id="4_olhns"]
+[ext_resource type="PackedScene" uid="uid://c7lnabo5pethg" path="res://rev_rotating_gear.tscn" id="5_bfcls"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x6bts"]
 
@@ -45,9 +46,9 @@ position = Vector2(1162, 59)
 scale = Vector2(0.1, 0.1)
 
 [node name="rotating_gear1" parent="." instance=ExtResource("4_olhns")]
-position = Vector2(2138, 108)
+position = Vector2(2128, 105)
 scale = Vector2(0.1, 0.1)
 
-[node name="rotating_gear2" parent="." instance=ExtResource("4_olhns")]
-position = Vector2(2653, -350)
+[node name="rotating_gear2" parent="." instance=ExtResource("5_bfcls")]
+position = Vector2(2645, -362)
 scale = Vector2(0.1, 0.1)
