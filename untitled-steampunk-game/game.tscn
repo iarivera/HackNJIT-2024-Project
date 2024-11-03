@@ -1,14 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://jovaxxxf25v1"]
+[gd_scene load_steps=9 format=3 uid="uid://jovaxxxf25v1"]
 
 [ext_resource type="PackedScene" uid="uid://ctvidwgdybrfj" path="res://player.tscn" id="1_7odis"]
 [ext_resource type="Script" path="res://game.gd" id="1_ukjgc"]
 [ext_resource type="PackedScene" uid="uid://b3u8l5nnkqx70" path="res://back_and_forth_gear.tscn" id="3_t4arx"]
+[ext_resource type="PackedScene" uid="uid://c1ggo0cijva4t" path="res://rotating_gear.tscn" id="4_olhns"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x6bts"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wg6tc"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nfcg0"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_mr25d"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fye8g"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ukjgc")
@@ -21,9 +24,14 @@ position = Vector2(35, 30)
 shape = SubResource("WorldBoundaryShape2D_wg6tc")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(366.529, -116)
-scale = Vector2(1629.06, 906)
-texture = SubResource("PlaceholderTexture2D_nfcg0")
+position = Vector2(1453.5, -311)
+scale = Vector2(3803, 1296)
+texture = SubResource("CanvasTexture_mr25d")
+
+[node name="Floor" type="Sprite2D" parent="."]
+position = Vector2(1454.25, 631)
+scale = Vector2(3808.5, 1296)
+texture = SubResource("PlaceholderTexture2D_fye8g")
 
 [node name="Player" parent="." instance=ExtResource("1_7odis")]
 position = Vector2(25, -63)
@@ -33,5 +41,13 @@ offset = Vector2(200, -50)
 zoom = Vector2(0.9, 0.9)
 
 [node name="back_and_forth_gear" parent="." instance=ExtResource("3_t4arx")]
-position = Vector2(1351, 144)
+position = Vector2(1162, 59)
+scale = Vector2(0.1, 0.1)
+
+[node name="rotating_gear1" parent="." instance=ExtResource("4_olhns")]
+position = Vector2(2138, 108)
+scale = Vector2(0.1, 0.1)
+
+[node name="rotating_gear2" parent="." instance=ExtResource("4_olhns")]
+position = Vector2(2653, -350)
 scale = Vector2(0.1, 0.1)

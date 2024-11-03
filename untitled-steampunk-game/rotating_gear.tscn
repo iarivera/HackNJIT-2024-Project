@@ -17,16 +17,16 @@ tracks/0/path = NodePath("GearAnim:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [6.28319]
 }
 
 [sub_resource type="Animation" id="Animation_ieso1"]
 resource_name = "Rotation"
-length = 5.0
-loop_mode = 2
+length = 3.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -34,10 +34,10 @@ tracks/0/path = NodePath("GearAnim:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.966667, 3, 4.93333),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [2.35619, 6.28319, 6.28319]
+"values": [0.0, 6.28319]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1gheo"]
@@ -46,9 +46,10 @@ _data = {
 "Rotation": SubResource("Animation_ieso1")
 }
 
-[node name="GearPlat" type="Node2D"]
+[node name="rotating_gear" type="Node2D"]
 
 [node name="GearAnim" type="AnimatableBody2D" parent="."]
+rotation = 6.28319
 
 [node name="Sprite2D" type="Sprite2D" parent="GearAnim"]
 position = Vector2(13251, 9741)
@@ -103,3 +104,4 @@ shape = SubResource("RectangleShape2D_oal51")
 libraries = {
 "": SubResource("AnimationLibrary_1gheo")
 }
+autoplay = "Rotation"

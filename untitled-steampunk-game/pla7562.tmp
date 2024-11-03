@@ -1,0 +1,141 @@
+[gd_scene load_steps=20 format=3 uid="uid://ctvidwgdybrfj"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_hfprt"]
+[ext_resource type="Texture2D" uid="uid://duuchofrt1jtu" path="res://art/IdleR3.png" id="2_7kw1o"]
+[ext_resource type="Texture2D" uid="uid://dt5wer0aitrfu" path="res://art/JumpL2.png" id="2_b6yuo"]
+[ext_resource type="Texture2D" uid="uid://bxk3n2oi7t0hf" path="res://art/JumpR2.png" id="3_2mf80"]
+[ext_resource type="Texture2D" uid="uid://dfqrwy776a47l" path="res://art/IdleL1.png" id="4_rgtup"]
+[ext_resource type="Texture2D" uid="uid://s3guwmsx2gdm" path="res://art/IdleL2.png" id="5_xmvqj"]
+[ext_resource type="Texture2D" uid="uid://c2y03cbxllr04" path="res://art/IdleL3.png" id="6_wwwv0"]
+[ext_resource type="Texture2D" uid="uid://gl2ub76pi6sc" path="res://art/IdleR2.png" id="8_cmg1r"]
+[ext_resource type="Texture2D" uid="uid://bfs3qb0qoakki" path="res://art/IdleR1.png" id="9_tb0yu"]
+[ext_resource type="Texture2D" uid="uid://ciovugyrdii4p" path="res://art/JumpL1.png" id="10_ornq7"]
+[ext_resource type="Texture2D" uid="uid://oovbrk0m0xxl" path="res://art/JumpR1.png" id="11_5us0b"]
+[ext_resource type="Texture2D" uid="uid://di3xxei7nmslx" path="res://art/RunL1.png" id="12_rhd8e"]
+[ext_resource type="Texture2D" uid="uid://e144ior61xcq" path="res://art/RunL2.png" id="13_jpybu"]
+[ext_resource type="Texture2D" uid="uid://bkv5fbp34342n" path="res://art/RunL3.png" id="14_7i7jj"]
+[ext_resource type="Texture2D" uid="uid://bp1ec6bm20l20" path="res://art/RunR1.png" id="15_gdf7e"]
+[ext_resource type="Texture2D" uid="uid://bb1gwgnijt2rv" path="res://art/RunR2.png" id="16_0vv3v"]
+[ext_resource type="Texture2D" uid="uid://dgajnn1iypy" path="res://art/RunR3.png" id="17_tnv7v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5dp5b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b6yuo")
+}],
+"loop": true,
+"name": &"fall_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2mf80")
+}],
+"loop": true,
+"name": &"fall_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_rgtup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xmvqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wwwv0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xmvqj")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7kw1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cmg1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tb0yu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cmg1r")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("10_ornq7")
+}],
+"loop": true,
+"name": &"jump_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("11_5us0b")
+}],
+"loop": true,
+"name": &"jump_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_rhd8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jpybu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7i7jj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_rhd8e")
+}],
+"loop": true,
+"name": &"run_left",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_gdf7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_0vv3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_gdf7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_tnv7v")
+}],
+"loop": true,
+"name": &"run_right",
+"speed": 2.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_or1gh"]
+radius = 51.1111
+height = 115.556
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_hfprt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(78, 64)
+scale = Vector2(1.075, 1.35714)
+sprite_frames = SubResource("SpriteFrames_5dp5b")
+animation = &"jump_right"
+frame_progress = 0.494652
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -3)
+scale = Vector2(0.9, 0.9)
+shape = SubResource("CapsuleShape2D_or1gh")
